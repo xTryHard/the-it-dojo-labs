@@ -1,0 +1,32 @@
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM quay.io/jupyter/minimal-notebook:latest
+
+        USER root
+
+        RUN apt-get update && \
+            apt-get install -y openjdk-25-jdk unzip wget && \
+            apt-get clean && \
+            rm -rf /var/lib/apt/lists/*
+
+        USER jovyan
+
+        RUN wget https://github.com/dflib/jjava/releases/download/1.0-a7/jjava-1.0-a7-kernelspec.zip && \
+            unzip jjava-1.0-a7-kernelspec.zip -d /tmp/jjava && \
+            jupyter kernelspec install /tmp/jjava --user --name=java && \
+            rm -rf jjava-1.0-a7-kernelspec.zip /tmp/jjava
+
+        WORKDIR /home/jovyan
+
+        EXPOSE 8888
+    ports:
+      - "8889:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+      - ./data:/home/jovyan/data
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    command: start-notebook.sh --NotebookApp.token='' --NotebookApp.password='' --notebook-dir=/home/jovyan/notebooks
