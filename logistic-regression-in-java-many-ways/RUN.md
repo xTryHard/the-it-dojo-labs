@@ -1,7 +1,7 @@
 # Running the code
 
-This post trains the **same** logistic regression problem — *will the home team
-win?* — four times, once each with [DeepNetts/JSR381](https://deepnetts.com),
+This post trains the **same** logistic regression problem, *will the home team
+win?*, four times, once each with [DeepNetts/JSR381](https://deepnetts.com),
 [Tribuo](https://tribuo.org), [Weka](https://www.cs.waikato.ac.nz/ml/weka/), and
 [Smile](https://haifengl.github.io/), entirely in Java, inside a Jupyter
 notebook powered by the [JJava](https://github.com/dflib/jjava) kernel.
@@ -11,7 +11,7 @@ notebook powered by the [JJava](https://github.com/dflib/jjava) kernel.
 - [Docker](https://docs.docker.com/get-docker/) with Compose v2
   (`docker compose`, not the legacy `docker-compose`)
 
-That's it. No local Java, Maven, or Python installation is required — everything
+That's it. No local Java, Maven, or Python installation is required. Everything
 runs in the container.
 
 ## Get the dataset
@@ -50,9 +50,9 @@ When the logs settle, open:
 
 - **JupyterLab:** [http://localhost:8888](http://localhost:8888)
 
-Then open any notebook under `notebooks/` — the per-library deep-dives
+Then open any notebook under `notebooks/`, either the per-library deep-dives
 (`smile.ipynb`, `tribuo.ipynb`, `weka.ipynb`, `deepnetts.ipynb`) or
-`compare-all.ipynb` for all four side by side — and make sure the kernel
+`compare-all.ipynb` for all four side by side, and make sure the kernel
 (top-right) is set to **Java**. Run the cells top to bottom.
 
 To stop:
@@ -82,7 +82,7 @@ logistic-regression-in-java-many-ways/
 
 - The base image (`quay.io/jupyter/minimal-notebook`) includes Python only
   because Jupyter itself is a Python application. We are **not** configuring a
-  Python data-science environment — all the ML code is Java.
+  Python data-science environment. All the ML code is Java.
 - Each library's dependencies are resolved at runtime by the notebook's
   `%%loadFromPOM` cells, so the first run of those cells downloads them from
   Maven Central.
