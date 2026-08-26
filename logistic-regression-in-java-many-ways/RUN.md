@@ -26,7 +26,7 @@ folder:
 3. Unzip it so the CSVs land directly in `data/`:
 
 ```
-003-logistic-regression-many-ways/
+logistic-regression-in-java-many-ways/
 └── data/
     ├── results.csv        # the one we use
     ├── shootouts.csv
@@ -39,7 +39,7 @@ The `data/` folder is git-ignored, so the CSVs stay out of the repo.
 
 ## Steps
 
-From this directory (`posts/003-logistic-regression-many-ways/`):
+From this directory:
 
 ```bash
 docker compose up --build
@@ -64,8 +64,8 @@ docker compose down
 ## Layout
 
 ```
-003-logistic-regression-many-ways/
-├── README.md            # the blog post
+logistic-regression-in-java-many-ways/
+├── README.md            # start here
 ├── RUN.md               # this file
 ├── docker-compose.yml   # Jupyter + JJava (Java kernel), inline Dockerfile
 ├── notebooks/

@@ -9,9 +9,11 @@ to run.
 
 ## Run it
 
-\\\
+```bash
+docker compose up --build
+```
 
-Then open <http://localhost:8888>. See [\](RUN.md) for prerequisites,
+Then open <http://localhost:8888>. See [`RUN.md`](RUN.md) for prerequisites,
 datasets, and the full walkthrough.
 
 ---
