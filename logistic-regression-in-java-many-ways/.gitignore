@@ -1,0 +1,10 @@
+# Datasets are fetched by the reader, not committed.
+data/*
+!data/.gitkeep
+
+# Jupyter runtime artifacts
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# Training logs written next to the notebooks at runtime
+notebooks/logs/
